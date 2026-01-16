@@ -5,26 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Account | GlamAI</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fafafa; color: #1a1a1a; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 400px; text-align: center; }
-        h1 { color: #D4AF37; font-size: 24px; }
-        p { line-height: 1.6; color: #555; }
-        .btn { display: inline-block; background: #1a1a1a; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; margin-top: 20px; font-weight: bold; }
-        .warning { font-size: 12px; color: #888; margin-top: 20px; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background-color: #fafafa; color: #1a1a1a; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 420px; text-align: center; }
+        h1 { color: #D4AF37; font-size: 28px; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        h2 { font-size: 18px; font-weight: 600; margin-bottom: 1.5rem; }
+        p { line-height: 1.6; color: #555; font-size: 14px; }
+        
+        .input-group { margin: 25px 0; text-align: left; }
+        label { font-size: 12px; font-weight: bold; text-transform: uppercase; color: #888; margin-bottom: 8px; display: block; }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input[type="email"]:focus { border-color: #D4AF37; }
+
+        .btn { 
+            display: block; 
+            background: #1a1a1a; 
+            color: white; 
+            padding: 14px 24px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            transition: opacity 0.3s;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn:hover { opacity: 0.9; }
+        
+        .warning { font-size: 12px; color: #999; margin-top: 25px; border-top: 1px solid #eee; pt: 15px; padding-top: 15px; }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>GlamAI</h1>
-        <h2>Delete Your Account</h2>
-        <p>We're sorry to see you go. Deleting your account will permanently remove your virtual closet, AI style history, and personal metadata.</p>
+        <h2>Account Deletion</h2>
+        <p>Enter the email address associated with your GlamAI account. We will permanently remove your closet data and style profile.</p>
         
-        <!-- This button opens the user's email app with a pre-filled subject -->
-        <a href="mailto:msquad095@gmail.com?subject=Account%20Deletion%20Request%20-%20GlamAI&body=Please%20delete%20my%20GlamAI%20account.%20My%20registered%20email%20is:%20" class="btn">
-            Request Deletion via Email
-        </a>
+        <div class="input-group">
+            <label for="userEmail">Account Email</label>
+            <input type="email" id="userEmail" placeholder="your@email.com" required>
+        </div>
 
-        <p class="warning">Note: Requests are typically processed within 7 business days. You will receive a confirmation email once your data has been purged.</p>
+        <button onclick="sendDeletionEmail()" class="btn">
+            Request Deletion
+        </button>
+
+        <p class="warning">
+            Note: Requests are manually processed within 7 business days for security. 
+            You will receive a final confirmation email once data is purged.
+        </p>
     </div>
+
+    <script>
+        function sendDeletionEmail() {
+            const emailInput = document.getElementById('userEmail').value;
+            const adminEmail = "msquad095@gmail.com";
+            const subject = encodeURIComponent("Account Deletion Request - GlamAI");
+            
+            if (!emailInput || !emailInput.includes('@')) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // This constructs the mailto link with the user's email in the body
+            const body = encodeURIComponent(
+                "Hello GlamAI Team,\n\n" +
+                "I would like to request the permanent deletion of my GlamAI account.\n\n" +
+                "Account to be deleted: " + emailInput + "\n\n" +
+                "I understand that this action is irreversible and my closet data will be lost."
+            );
+
+            window.location.href = `mailto:${adminEmail}?subject=${subject}&body=${body}`;
+        }
+    </script>
 </body>
 </html>
