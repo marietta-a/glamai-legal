@@ -10,8 +10,9 @@
       --bg: #0f1220;
       --text: #ffffff;
       --muted: #c7c7d1;
-      --accent: #c75a8a;
+      --accent: #26A69A; /* Updated to match GlamAI Brand Teal */
       --card: #171a2b;
+      --premium: #ffb400; /* Gold for Elite Tiers */
     }
     body {
       margin: 0;
@@ -33,22 +34,27 @@
     h1 {
       font-size: 1.75rem;
       margin: 0 0 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     .effective-date {
       color: var(--muted);
       font-size: 0.95rem;
+      font-weight: bold;
     }
     section {
       background: var(--card);
       border: 1px solid #23263a;
-      border-radius: 12px;
-      padding: 1.25rem;
-      margin: 1rem 0;
+      border-radius: 24px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
     }
     h2 {
       font-size: 1.15rem;
       margin: 0 0 0.75rem;
       color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     p {
       margin: 0.5rem 0 0.75rem;
@@ -59,10 +65,29 @@
     li {
       margin: 0.35rem 0;
     }
+    .tier-box {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+    .premium-tier {
+      border-left-color: var(--premium);
+    }
+    .price-tag {
+      font-weight: black;
+      color: var(--text);
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
     footer {
       margin-top: 2rem;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     a {
       color: var(--accent);
@@ -71,104 +96,116 @@
     a:hover {
       text-decoration: underline;
     }
+    strong {
+        color: #fff;
+    }
   </style>
 </head>
 <body>
   <main class="container" role="main">
     <header>
       <h1>Privacy Policy for GlamAI</h1>
-      <div class="effective-date">Effective Date: January 16, 2026</div>
+      <div class="effective-date">Effective Date: February 10, 2026</div>
     </header>
 
     <section aria-labelledby="intro">
       <h2 id="intro">Introduction</h2>
       <p>
-        At GlamAI, we are committed to protecting your privacy and your style. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application and services.
+        At GlamAI, we are committed to protecting your privacy and your personal style. This Privacy Policy explains how we collect, use, and safeguard your information through our Stylometric AI Engines.
       </p>
     </section>
 
+    <section aria-labelledby="subscriptions">
+        <h2 id="subscriptions">1. Subscriptions and Virtual Credits</h2>
+        <p>GlamAI provides tiered access levels to our computational fashion engines. By purchasing a subscription or credit pack, you gain access to high-fidelity AI processing. Usage of these services is logged to manage your remaining balance.</p>
+        
+        <div class="tier-box premium-tier">
+            <strong>Yearly Membership</strong> <span class="price-tag">$339.99</span>
+            <ul>
+                <li>Unlimited Yearly Access to all Stylometric Engines.</li>
+                <li>Unlimited AI Styling Edits and Ensemble Coordination.</li>
+                <li>Unlimited VR Environment Simulations.</li>
+                <li>Unlimited HD Editorial Photo Renders.</li>
+            </ul>
+        </div>
+
+        <div class="tier-box premium-tier">
+            <strong>Monthly Elite</strong> <span class="price-tag">$49.99</span>
+            <ul>
+                <li>Unlimited Monthly Access to all Stylometric Engines.</li>
+                <li>Unlimited AI Styling Edits and Ensemble Coordination.</li>
+                <li>Unlimited VR Environment Simulations.</li>
+                <li>Unlimited HD Editorial Photo Renders.</li>
+            </ul>
+        </div>
+
+        <div class="tier-box">
+            <strong>Growth Pack</strong> <span class="price-tag">$10.99</span>
+            <ul>
+                <li><strong>1000 Credits</strong> for on-demand archival processing.</li>
+                <li>Unlock AI Styling Edits.</li>
+                <li>Access VR Environment Simulations.</li>
+                <li>Generate HD Editorial Renders.</li>
+            </ul>
+        </div>
+
+        <div class="tier-box">
+            <strong>Starter Pack</strong> <span class="price-tag">$2.99</span>
+            <ul>
+                <li><strong>200 Credits</strong> for initial archival processing.</li>
+                <li>Unlock AI Styling Edits.</li>
+                <li>Access VR Environment Simulations.</li>
+                <li>Generate HD Editorial Renders.</li>
+            </ul>
+        </div>
+    </section>
+
     <section aria-labelledby="collect">
-      <h2 id="collect">1. Information we collect</h2>
+      <h2 id="collect">2. Information we collect</h2>
       <p>To provide a personalized AI stylist experience, we collect the following types of information:</p>
       <ul>
-        <li><strong>Account information:</strong> Name, email address, and profile details (e.g., whether you are a student or worker).</li>
-        <li><strong>Visual content (“Closet”):</strong> Images of clothing items and closets you upload—this is the core of our service.</li>
-        <li><strong>Wardrobe metadata:</strong> AI-generated attributes such as category, color, material, formality level, and price.</li>
-        <li><strong>Usage data:</strong> Interactions with the app, including favorite items and accepted outfit suggestions.</li>
-        <li><strong>Device information:</strong> IP address, device type, and operating system version.</li>
+        <li><strong>Account information:</strong> Name, email address, and profile biometric metadata.</li>
+        <li><strong>Visual content (“The Archive”):</strong> Images of clothing items and "Identity Proxy" face photos you upload.</li>
+        <li><strong>Wardrobe metadata:</strong> AI-generated attributes such as category, color, material, and thermal grade.</li>
+        <li><strong>Transaction Data:</strong> Purchase history handled securely via Google Play Store or Apple App Store.</li>
       </ul>
     </section>
 
     <section aria-labelledby="use">
-      <h2 id="use">2. How we use your information</h2>
+      <h2 id="use">3. How we use your information</h2>
       <ul>
-        <li><strong>Identify and organize:</strong> Segment closet photos into individual items.</li>
-        <li><strong>Provide AI insights:</strong> Extract details like “warmth level,” “formality,” and “seasonality” to help manage your wardrobe.</li>
-        <li><strong>Generate suggestions:</strong> Use style preferences and wardrobe data to suggest daily outfits.</li>
-        <li><strong>Improve the AI:</strong> Train internal algorithms to better recognize fashion trends and styles (using de-identified data).</li>
+        <li><strong>Digitize and organize:</strong> Isolate garments onto white backgrounds for archival clarity.</li>
+        <li><strong>Neural Draping:</strong> Synthesize images of your Identity Proxy wearing items from your Archive.</li>
+        <li><strong>VR Simulation:</strong> Render your curated outfits in occasion-specific virtual environments.</li>
+        <li><strong>Usage tracking:</strong> Deduct virtual credits based on the complexity of the AI task (HD vs Standard).</li>
       </ul>
     </section>
 
     <section aria-labelledby="ai-third-party">
-      <h2 id="ai-third-party">3. AI processing and third‑party services</h2>
-      <p><strong>Image analysis:</strong> Your uploaded images may be processed by third‑party AI providers (such as Google Gemini/AI Studio) to identify clothing attributes. By using GlamAI, you consent to the processing of your images by these secure third‑party AI engines.</p>
-      <p><strong>Cloud storage:</strong> We use secure cloud providers (e.g., Firebase, AWS) to store your images and wardrobe metadata.</p>
-      <p><strong>No sale of data:</strong> We do not sell your personal images or closet data to third‑party advertisers.</p>
+      <h2 id="ai-third-party">4. AI processing and third‑party services</h2>
+      <p><strong>Image analysis:</strong> Your images are processed by secure third‑party AI providers (Google Gemini/Vertex AI) to generate fashion metadata and renders. We do not sell your personal images to third‑party advertisers.</p>
+      <p><strong>Cloud storage:</strong> We use encrypted cloud storage (Supabase/AWS) to ensure your Archive remains synchronized across your devices.</p>
     </section>
 
     <section aria-labelledby="retention">
-      <h2 id="retention">4. Data retention</h2>
+      <h2 id="retention">5. Data retention</h2>
       <ul>
-        <li><strong>Active accounts:</strong> We retain your wardrobe data and images for as long as your account is active.</li>
-        <li><strong>Item deletion:</strong> If you delete an item, the associated metadata and image are removed from our active database.</li>
-        <li><strong>Account deletion:</strong> If you delete your account, we will purge your personal data from our systems within [e.g., 30 days], except where required by law.</li>
+        <li><strong>Active accounts:</strong> We retain your Archive for as long as your account is active.</li>
+        <li><strong>Permanent Deletion:</strong> Users may request permanent archival erasure via the "Danger Zone" in the Settings laboratory.</li>
       </ul>
-    </section>
-
-    <section aria-labelledby="rights">
-      <h2 id="rights">5. Your rights and choices</h2>
-      <p>Depending on your location (e.g., GDPR in Europe, CCPA in California), you may have the right to:</p>
-      <ul>
-        <li><strong>Access:</strong> Request a copy of the data we hold about your wardrobe.</li>
-        <li><strong>Correction:</strong> Update or correct any inaccurate wardrobe details.</li>
-        <li><strong>Deletion:</strong> Request the total deletion of your account and images.</li>
-        <li><strong>Opt‑out:</strong> Choose not to provide certain profile details, though this may limit the accuracy of AI outfit suggestions.</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="security">
-      <h2 id="security">6. Security</h2>
-      <p>
-        We implement industry‑standard security measures to protect your images, including encryption of data in transit and at rest. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
-      </p>
-    </section>
-
-    <section aria-labelledby="children">
-      <h2 id="children">7. Children’s privacy</h2>
-      <p>
-        GlamAI is not intended for children under the age of 13. We do not knowingly collect personal information from children.
-      </p>
-    </section>
-
-    <section aria-labelledby="changes">
-      <h2 id="changes">8. Changes to this policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy within the app and updating the “Effective Date.”
-      </p>
     </section>
 
     <section aria-labelledby="contact">
-      <h2 id="contact">9. Contact us</h2>
+      <h2 id="contact">6. Contact us</h2>
       <address>
-        <p>If you have any questions about this Privacy Policy or how your “Glamorous” closet data is handled, please contact us at:</p>
+        <p>If you have any questions about this Privacy Policy or your boutique data, contact our Style Support team:</p>
         <p><strong>GlamAI</strong><br />
-        Email: <a href="mailto:[Your Support Email]">info@radiantglowdiet.com</a><br />
-        <!-- Website: <a href="[Your Website URL]" rel="noopener">[Your Website URL]</a></p> -->
+        Email: <a href="mailto:info@radiantglowdiet.com">info@radiantglowdiet.com</a><br />
       </address>
     </section>
 
     <footer>
-      © GlamAI — All rights reserved.
+      © 2026 GlamAI — Digital Boutique Intelligence. All rights reserved.
     </footer>
   </main>
 </body>
